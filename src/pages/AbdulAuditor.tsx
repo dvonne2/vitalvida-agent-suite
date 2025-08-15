@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Routes, Route, useNavigate, useLocation, NavLink } from "react-router-dom";
 import { 
@@ -248,6 +247,139 @@ const Investigation = () => {
           </Alert>
         </CardContent>
       </Card>
+
+      {/* Chain-of-Custody Timeline Section */}
+      <div className="bg-white rounded-lg border border-gray-200 p-6 mt-6">
+        <h3 className="text-lg font-semibold mb-4 text-gray-900">Chain-of-Custody Timeline</h3>
+        <div className="text-sm text-gray-600 mb-4">Every touch, in order - signed events with proof</div>
+        
+        <div className="overflow-x-auto">
+          <table className="min-w-full">
+            <thead>
+              <tr className="bg-gray-50 border-b border-gray-200">
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Time</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Event</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Qty</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">From → To</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Who Signed</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Evidence</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-11 09:02</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Issue Request Approved</td>
+                <td className="px-3 py-2 text-sm text-center text-gray-900">10</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Inv. Manager → Logistics Manager</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Inventory Mgr (e-sign)</td>
+                <td className="px-3 py-2 text-sm text-blue-600">Approval ID, IP, device</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-11 10:15</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Picked from Warehouse</td>
+                <td className="px-3 py-2 text-sm text-center text-gray-900">10</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Warehouse → Logistics Staging</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Storekeeper (QR + photo)</td>
+                <td className="px-3 py-2 text-sm text-blue-600">QR scan, bin ID, photo, GPS</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-11 14:06</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Dispatch to Agent</td>
+                <td className="px-3 py-2 text-sm text-center text-gray-900">10</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Logistics Mgr → DA001</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Logistics Mgr & DA001 (dual sign)</td>
+                <td className="px-3 py-2 text-sm text-blue-600">Agent app signed, GPS, time</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-12 16:22</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Delivered (Sale)</td>
+                <td className="px-3 py-2 text-sm text-center text-red-600">-1</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001 → Customer #54021</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001</td>
+                <td className="px-3 py-2 text-sm text-blue-600">e-receipt, order ID, GPS</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-15 07:05</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Agent Self-Declare</td>
+                <td className="px-3 py-2 text-sm text-center text-red-600">5</td>
+                <td className="px-3 py-2 text-sm text-gray-600">— DA001</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001 (PIN)</td>
+                <td className="px-3 py-2 text-sm text-blue-600">Declaration log, device, IP</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Deliveries & Payments Section */}
+      <div className="bg-white rounded-lg border border-gray-200 p-6 mt-6">
+        <h3 className="text-lg font-semibold mb-4 text-gray-900">Deliveries & Payments (drill-down)</h3>
+        
+        <div className="overflow-x-auto">
+          <table className="min-w-full">
+            <thead>
+              <tr className="bg-gray-50 border-b border-gray-200">
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Order</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Customer</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Item</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Qty</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Delivered At</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Paid At</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Method</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Match</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm font-medium text-blue-600">#54021</td>
+                <td className="px-3 py-2 text-sm text-gray-900">Aminat Hassan</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Shampoo</td>
+                <td className="px-3 py-2 text-sm text-center text-gray-900">1</td>
+                <td className="px-3 py-2 text-sm text-gray-900">₦8,500</td>
+                <td className="px-3 py-2 text-sm text-gray-600">2025-08-12 16:22</td>
+                <td className="px-3 py-2 text-sm text-gray-600">16:25</td>
+                <td className="px-3 py-2 text-sm"><span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">POS</span></td>
+                <td className="px-3 py-2 text-sm text-green-600">✅</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm font-medium text-blue-600">#54098</td>
+                <td className="px-3 py-2 text-sm text-gray-900">Chika U.</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Shampoo</td>
+                <td className="px-3 py-2 text-sm text-center text-gray-900">1</td>
+                <td className="px-3 py-2 text-sm text-gray-900">₦8,500</td>
+                <td className="px-3 py-2 text-sm text-gray-600">2025-08-13 11:05</td>
+                <td className="px-3 py-2 text-sm text-gray-600">11:12</td>
+                <td className="px-3 py-2 text-sm"><span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">POS</span></td>
+                <td className="px-3 py-2 text-sm text-green-600">✅</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Open Actions Section */}
+      <div className="bg-white rounded-lg border border-gray-200 p-6 mt-6">
+        <h3 className="text-lg font-semibold mb-4 text-gray-900">Open Actions</h3>
+        <div className="flex flex-wrap gap-3">
+          <button className="flex items-center space-x-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
+            <span>🔒</span>
+            <span>Freeze DA001 Shampoo Bin</span>
+          </button>
+          <button className="flex items-center space-x-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+            <span>⚠️</span>
+            <span>Open Case</span>
+          </button>
+          <button className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            <span>📱</span>
+            <span>Request Physical Count (QR)</span>
+          </button>
+          <button className="flex items-center space-x-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+            <span>💳</span>
+            <span>Debit 1 unit</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
