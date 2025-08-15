@@ -14,6 +14,7 @@ import DeliveryAgents from "./pages/DeliveryAgents";
 import Suppliers from "./pages/Suppliers";
 import Settings from "./pages/Settings";
 import Help from "./pages/Help";
+import AbdulAuditor from "./pages/AbdulAuditor";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
                 <Route path="inventory" element={<Inventory />} />
                 <Route path="agents" element={<DeliveryAgents />} />
                 <Route path="suppliers" element={<Suppliers />} />
+                <Route path="abdul/*" element={<AbdulAuditor />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="help" element={<Help />} />
               </Route>
