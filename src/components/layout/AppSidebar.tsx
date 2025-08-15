@@ -10,7 +10,10 @@ import {
   HelpCircle,
   LayoutDashboard,
   Package,
-  Shield
+  Shield,
+  ArrowRightLeft,
+  Zap,
+  Bell
 } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
@@ -33,6 +36,9 @@ const navigationItems = [
   { title: "Inventory", url: "/inventory", icon: Warehouse },
   { title: "Delivery Agents", url: "/agents", icon: Truck },
   { title: "Suppliers", url: "/suppliers", icon: Building2 },
+  { title: "Stock Transfers", url: "/stock-transfers", icon: ArrowRightLeft },
+  { title: "System Integrations", url: "/integrations", icon: Zap },
+  { title: "Notifications & Alerts", url: "/notifications", icon: Bell, badge: "7" },
   { title: "Abdul - Inventory Auditor", url: "/abdul", icon: Shield, badge: "3", special: true },
   { title: "Settings", url: "/settings", icon: Settings },
   { title: "Help", url: "/help", icon: HelpCircle, badge: "3" },

@@ -12,6 +12,7 @@ import Items from "./pages/Items";
 import Inventory from "./pages/Inventory";
 import DeliveryAgents from "./pages/DeliveryAgents";
 import Suppliers from "./pages/Suppliers";
+import StockTransfers from "./pages/StockTransfers";
 import Settings from "./pages/Settings";
 import Help from "./pages/Help";
 import AbdulAuditor from "./pages/AbdulAuditor";
@@ -35,6 +36,9 @@ const App = () => (
                 <Route path="inventory" element={<Inventory />} />
                 <Route path="agents" element={<DeliveryAgents />} />
                 <Route path="suppliers" element={<Suppliers />} />
+                <Route path="stock-transfers" element={<StockTransfers />} />
+                <Route path="integrations" element={<div className="p-6"><h1 className="text-2xl font-bold">System Integrations</h1><p className="text-gray-600">Coming soon...</p></div>} />
+                <Route path="notifications" element={<div className="p-6"><h1 className="text-2xl font-bold">Notifications & Alerts</h1><p className="text-gray-600">Coming soon...</p></div>} />
                 <Route path="abdul/*" element={<AbdulAuditor />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="help" element={<Help />} />
