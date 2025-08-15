@@ -211,7 +211,7 @@ const Investigation = () => {
           <CardTitle className="text-red-600">Investigation Results - Tunde Abuja (DA001)</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
             <Card>
               <CardContent className="p-4 text-center">
                 <div className="text-2xl font-bold text-blue-600">10</div>
@@ -234,6 +234,12 @@ const Investigation = () => {
               <CardContent className="p-4 text-center border-red-200 bg-red-50">
                 <div className="text-2xl font-bold text-red-600">5</div>
                 <div className="text-sm text-gray-600">DECLARED</div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-4 text-center bg-red-100 border-red-200">
+                <div className="text-2xl font-bold text-red-700">-1</div>
+                <div className="text-sm text-red-700 font-medium">VARIANCE</div>
               </CardContent>
             </Card>
           </div>
@@ -283,6 +289,14 @@ const Investigation = () => {
                 <td className="px-3 py-2 text-sm text-blue-600">QR scan, bin ID, photo, GPS</td>
               </tr>
               <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-11 10:47</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Handover to Logistics</td>
+                <td className="px-3 py-2 text-sm text-center text-gray-900">10</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Logistics Staging → Logistics Mgr</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Logistics Mgr (PIN + face ID)</td>
+                <td className="px-3 py-2 text-sm text-blue-600">Handover doc PDF</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
                 <td className="px-3 py-2 text-sm text-gray-900">2025-08-11 14:06</td>
                 <td className="px-3 py-2 text-sm font-medium text-gray-900">Dispatch to Agent</td>
                 <td className="px-3 py-2 text-sm text-center text-gray-900">10</td>
@@ -291,10 +305,42 @@ const Investigation = () => {
                 <td className="px-3 py-2 text-sm text-blue-600">Agent app signed, GPS, time</td>
               </tr>
               <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-11 14:08</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Agent Received</td>
+                <td className="px-3 py-2 text-sm text-center text-gray-900">10</td>
+                <td className="px-3 py-2 text-sm text-gray-600">— DA001</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001 (confirm receive)</td>
+                <td className="px-3 py-2 text-sm text-blue-600">Agent app confirmation, device ID</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
                 <td className="px-3 py-2 text-sm text-gray-900">2025-08-12 16:22</td>
                 <td className="px-3 py-2 text-sm font-medium text-gray-900">Delivered (Sale)</td>
                 <td className="px-3 py-2 text-sm text-center text-red-600">-1</td>
                 <td className="px-3 py-2 text-sm text-gray-600">DA001 → Customer #54021</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001</td>
+                <td className="px-3 py-2 text-sm text-blue-600">e-receipt, order ID, GPS</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-13 11:05</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Delivered (Sale)</td>
+                <td className="px-3 py-2 text-sm text-center text-red-600">-1</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001 → Customer #54098</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001</td>
+                <td className="px-3 py-2 text-sm text-blue-600">e-receipt, order ID, GPS</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-13 17:40</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Delivered (Sale)</td>
+                <td className="px-3 py-2 text-sm text-center text-red-600">-1</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001 → Customer #54122</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001</td>
+                <td className="px-3 py-2 text-sm text-blue-600">e-receipt, order ID, GPS</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm text-gray-900">2025-08-14 09:18</td>
+                <td className="px-3 py-2 text-sm font-medium text-gray-900">Delivered (Sale)</td>
+                <td className="px-3 py-2 text-sm text-center text-red-600">-1</td>
+                <td className="px-3 py-2 text-sm text-gray-600">DA001 → Customer #54177</td>
                 <td className="px-3 py-2 text-sm text-gray-600">DA001</td>
                 <td className="px-3 py-2 text-sm text-blue-600">e-receipt, order ID, GPS</td>
               </tr>
@@ -350,6 +396,28 @@ const Investigation = () => {
                 <td className="px-3 py-2 text-sm text-gray-900">₦8,500</td>
                 <td className="px-3 py-2 text-sm text-gray-600">2025-08-13 11:05</td>
                 <td className="px-3 py-2 text-sm text-gray-600">11:12</td>
+                <td className="px-3 py-2 text-sm"><span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">POS</span></td>
+                <td className="px-3 py-2 text-sm text-green-600">✅</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm font-medium text-blue-600">#54122</td>
+                <td className="px-3 py-2 text-sm text-gray-900">Dr. Okoro</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Shampoo</td>
+                <td className="px-3 py-2 text-sm text-center text-gray-900">1</td>
+                <td className="px-3 py-2 text-sm text-gray-900">₦8,500</td>
+                <td className="px-3 py-2 text-sm text-gray-600">2025-08-13 17:40</td>
+                <td className="px-3 py-2 text-sm text-gray-600">17:45</td>
+                <td className="px-3 py-2 text-sm"><span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Transfer</span></td>
+                <td className="px-3 py-2 text-sm text-green-600">✅</td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="px-3 py-2 text-sm font-medium text-blue-600">#54177</td>
+                <td className="px-3 py-2 text-sm text-gray-900">K. Adebayo</td>
+                <td className="px-3 py-2 text-sm text-gray-600">Shampoo</td>
+                <td className="px-3 py-2 text-sm text-center text-gray-900">1</td>
+                <td className="px-3 py-2 text-sm text-gray-900">₦8,500</td>
+                <td className="px-3 py-2 text-sm text-gray-600">2025-08-14 09:18</td>
+                <td className="px-3 py-2 text-sm text-gray-600">09:21</td>
                 <td className="px-3 py-2 text-sm"><span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">POS</span></td>
                 <td className="px-3 py-2 text-sm text-green-600">✅</td>
               </tr>
